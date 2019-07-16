@@ -33,14 +33,17 @@
     <ClCompile Include="src\getopt.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\readoptions.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\readoptions.h">
       <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\readoptions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\getopt_long.c">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

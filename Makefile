@@ -14,5 +14,5 @@ all: $(TARGETS)
 clean:
 	rm -f $(TARGETS)
 
-$(TARGETS) : %: main.cc
+$(TARGETS) : %: main.cpp
 	$(CXX) $(CXXFLAGS) -o $@ $<

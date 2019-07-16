@@ -228,7 +228,7 @@ public:
 		//state' is encoded as the sequence of spin flips to be performed on state
 		hamiltonian_.FindConn(state_, flipsh_, mel_);
 
-		for (int i = 0; i < flipsh_.size(); i++) {
+		for (unsigned int i = 0; i < flipsh_.size(); i++) {
 			en += wf_.PoP(state_, flipsh_[i])*mel_[i];
 		}
 
@@ -325,7 +325,7 @@ public:
 
 		for (int i = 0; i < nblocks; i++) {
 			double eblock = 0;
-			for (int j = i * blocksize; j < (i + 1)*blocksize; j++) {
+			for (unsigned int j = i * blocksize; j < (i + 1)*blocksize; j++) {
 				eblock += energy_[j].real();
 				assert(j < energy_.size());
 
@@ -347,7 +347,7 @@ public:
 		double estav = enmean / double(nspins_);
 		double esterror = std::sqrt(enmeansq / double(nblocks)) / double(nspins_);
 
-		int ndigits = std::log10(esterror);
+		int ndigits = (int)std::log10(esterror);
 		if (ndigits < 0) {
 			ndigits = -ndigits + 2;
 		}

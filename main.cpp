@@ -24,26 +24,13 @@ All use of these programs is entirely at the user's own risk.
 */
 #include <map>
 #include <string>
-#include "src/readoptions.h"
 #include "src/nqs_paper.h"
+#include "src/readoptions.h"
 using namespace std;
-
 
 int main(int argc, char *argv[]) {
 
 	auto opts = ReadOptions(argc, argv);
-	/*std::map<std::string, std::string> opts;
-	opts.insert(std::pair<std::string, std::string>("filename", "E:\\many-body neunal network\\Ground\\Heisenberg2d_100_1_32.wf"));
-	opts.insert(std::pair<std::string, std::string>("seed", "-1"));
-	opts.insert(std::pair<std::string, std::string>("nsweeps", "1.0e4"));
-	opts.insert(std::pair<std::string, std::string>("filestates", "log.txt"));
-	opts.insert(std::pair<std::string, std::string>("hfield", "3"));
-	if (opts["model"] == "Ising1d") {
-		opts["hfield"] = FindCoupling(opts["filename"]);
-	}
-	else {
-		opts["jz"] = FindCoupling(opts["filename"]);
-	}*/
 	//Defining the neural-network wave-function
 	Nqs wavef(opts["filename"]);
 
@@ -91,7 +78,7 @@ int main(int argc, char *argv[]) {
 		sampler.Run(nsweeps);
 	}
 	else {
-		std::cerr << "#The given input file does not correspond to one of the implemented problem hamiltonians";
+		std::cerr << "#The given input file does not correspond to one of the implemented problem Hamiltonians";
 		std::abort();
 	}
 

@@ -48,7 +48,7 @@ class Heisenberg2d {
 	std::vector<std::vector<int> > bonds_;
 public:
 
-	Heisenberg2d(int nspins, double jz, bool pbc = true) :nspins_(nspins), pbc_(pbc), jz_(jz), l_(std::sqrt(nspins_)) {
+	Heisenberg2d(int nspins, double jz, bool pbc = true) :nspins_(nspins), pbc_(pbc), jz_(jz), l_(int(std::sqrt(nspins_))) {
 		InitLattice();
 		std::cout << "# Using the 2d Heisenberg model with J_z = " << jz_ << std::endl;
 	}
@@ -93,14 +93,14 @@ public:
 		//computing interaction part Sz*Sz
 		mel[0] = 0.;
 
-		for (int i = 0; i < bonds_.size(); i++) {
+		for (unsigned int i = 0; i < bonds_.size(); i++) {
 			mel[0] += double(state[bonds_[i][0]] * state[bonds_[i][1]]);
 		}
 
 		mel[0] *= jz_;
 
 		//Looks for possible spin flips
-		for (int i = 0; i < bonds_.size(); i++) {
+		for (unsigned int i = 0; i < bonds_.size(); i++) {
 			const int si = bonds_[i][0];
 			const int sj = bonds_[i][1];
 

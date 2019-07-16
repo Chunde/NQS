@@ -110,6 +110,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>WIN32;__STDC__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -119,6 +120,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\getopt.c" />
+    <ClCompile Include="src\getopt_long.c" />
     <ClCompile Include="src\heisenberg1d.cc" />
     <ClCompile Include="src\heisenberg2d.cc" />
     <ClCompile Include="src\ising1d.cc" />
